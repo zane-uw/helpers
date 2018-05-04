@@ -31,3 +31,7 @@ next.fall <- function(x){
          get.y(x) * 10 + 4,
          x+10)
 }
+
+qtr.diff <- function(yrq1, yrq2){
+  ((get.y(yrq1) - get.y(yrq2)) * 4) + (get.q(yrq1) - get.q(yrq2))
+}
