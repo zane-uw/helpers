@@ -1,0 +1,17 @@
+
+# build project directory -------------------------------------------------
+
+build.proj <- function(base.dir = "~/Documents/toy dir", nm = "", git = "", au = "", des = ""){
+
+  if(dir.exists(base.dir)){
+    return(cat("already exists >> ", base.dir))
+  }
+
+  dir.create(base.dir)
+  folders <- c("data", "out", "references", "src",
+               "data/cleaned", "data/external", "data/interim", "data/raw",
+               "out/figs", "out/models",
+               "src/data", "src/mods", "src/viz")
+  lapply(folders, function(x) dir.create(paste0(base.dir, "/", x)))
+  cat(sprintf("%s\nproject name: %s\ngit: %s\nauthor: %s\ndescription: %s", Sys.Date(), nm, git, au, des), file = paste0(base.dir, "/readme.txt"))
+}
