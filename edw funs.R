@@ -37,9 +37,6 @@ next.fall <- function(x){
 qtr.diff <- function(yrq1, yrq2){
   ((get.y(yrq1) - get.y(yrq2)) * 4) + (get.q(yrq1) - get.q(yrq2))
 }
-qtr.diff <- function(yrq1, yrq2){
-  ((get.y(yrq1) - get.y(yrq2)) * 4) + (get.q(yrq1) - get.q(yrq2))
-}
 
 fix.sdb.names <- function(x = "EDWSampleVarName"){
   # convert UpperStyle edw/sdb names to r style
