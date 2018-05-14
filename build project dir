@@ -14,4 +14,5 @@ build.proj <- function(base.dir = "~/Documents/toy dir", nm = "", git = "", au =
                "src/data", "src/mods", "src/viz")
   lapply(folders, function(x) dir.create(paste0(base.dir, "/", x)))
   cat(sprintf("%s\nproject name: %s\ngit: %s\nauthor: %s\ndescription: %s", Sys.Date(), nm, git, au, des), file = paste0(base.dir, "/readme.txt"))
+  cat(sprintf("# project config file; add to .gitignore"), file = paste0(base.dir, "/config.this"))
 }
